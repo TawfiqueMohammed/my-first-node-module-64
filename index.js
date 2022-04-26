@@ -21,8 +21,13 @@ const users = [
     { id: 7, name: 'sraboni', email: 'sraboni@gmail.com', phone: '023123' },
 ]
 
+
+// app.get('/users', (req, res)=> {
+//     res.send(users);
+// })
+
+// filter by query parameter / search parameter
 app.get('/users', (req, res) => {
-    // filter by query parameter / search parameter
     if (req.query.name) {
         const search = req.query.name;
         const matched = users.filter(user => user.name.toLowerCase().includes(search));
